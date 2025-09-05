@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spinning Text Animation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .spinning-text-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .spinning-text {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: spin 10s linear infinite;
+        }
+
+        .spinning-text span {
+            position: absolute;
+            left: 50%;
+            font-size: 18px;
+            font-weight: bold;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            transform-origin: 0 150px;
+            letter-spacing: 2px;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Individual letter positioning */
+        .spinning-text span:nth-child(1) { transform: rotate(0deg) translate(-50%, 0); }
+        .spinning-text span:nth-child(2) { transform: rotate(12deg) translate(-50%, 0); }
+        .spinning-text span:nth-child(3) { transform: rotate(24deg) translate(-50%, 0); }
+        .spinning-text span:nth-child(4) { transform: rotate(36deg) translate(-50%, 0); }
+        .spinning-text span:nth-child(5) { transform: rotate(48deg) translate(-50%, 0); }
+        .spinning-text span:nth-child(6) { transform: rotate(60deg) translate(-50%, 0); }
+        .spinning-text span:nth-child(7) { transform: rotate(72deg) translate(-50%, 0); }
+        .spinning-text span:nth-child(8) { transform: rotate(84deg) translate(-50%, 0); }
+        .spinning-text span:nth-child(9) { transform: rotate(96deg) translate(-50%, 0); }
+        .spinning-text span:nth-child(10) { transform: rotate(108deg) translate(-50%, 0); }
+        .spinning-text span:nth-child(11) { transform: rotate(120deg) translate(-50%, 0); }
+        .spinning-text span:nth-child(12) { transform: rotate(132deg) translate(-50%, 0); }
+        .spinning-text span:nth-child(13) { transform: rotate(144deg) translate(-50%, 0); }
+        .spinning-text span:nth-child(14) { transform: rotate(156deg) translate(-50%, 0); }
+        .spinning-text span:nth-child(15) { transform: rotate(168deg) translate(-50%, 0); }
+        .spinning-text span:nth-child(16) { transform: rotate(180deg) translate(-50%, 0); }
+        .spinning-text span:nth-child(17) { transform: rotate(192deg) translate(-50%, 0); }
+        .spinning-text span:nth-child(18) { transform: rotate(204deg) translate(-50%, 0); }
+        .spinning-text span:nth-child(19) { transform: rotate(216deg) translate(-50%, 0); }
+        .spinning-text span:nth-child(20) { transform: rotate(228deg) translate(-50%, 0); }
+        .spinning-text span:nth-child(21) { transform: rotate(240deg) translate(-50%, 0); }
+        .spinning-text span:nth-child(22) { transform: rotate(252deg) translate(-50%, 0); }
+        .spinning-text span:nth-child(23) { transform: rotate(264deg) translate(-50%, 0); }
+        .spinning-text span:nth-child(24) { transform: rotate(276deg) translate(-50%, 0); }
+        .spinning-text span:nth-child(25) { transform: rotate(288deg) translate(-50%, 0); }
+        .spinning-text span:nth-child(26) { transform: rotate(300deg) translate(-50%, 0); }
+        .spinning-text span:nth-child(27) { transform: rotate(312deg) translate(-50%, 0); }
+        .spinning-text span:nth-child(28) { transform: rotate(324deg) translate(-50%, 0); }
+        .spinning-text span:nth-child(29) { transform: rotate(336deg) translate(-50%, 0); }
+        .spinning-text span:nth-child(30) { transform: rotate(348deg) translate(-50%, 0); }
+
+        .center-content {
+            position: absolute;
+            z-index: 10;
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: none;
+        }
+
+        /* Controls */
+        .controls {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.1);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .controls button {
+            background: #FFD700;
+            border: none;
+            padding: 8px 16px;
+            margin: 5px;
+            border-radius: 5px;
+            color: #333;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .controls button:hover {
+            background: #FFC107;
+        }
+
+        .speed-slow { animation-duration: 15s !important; }
+        .speed-normal { animation-duration: 10s !important; }
+        .speed-fast { animation-duration: 5s !important; }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <button onclick="changeSpeed('slow')">Slow</button>
+        <button onclick="changeSpeed('normal')">Normal</button>
+        <button onclick="changeSpeed('fast')">Fast</button>
+        <button onclick="toggleDirection()">Reverse</button>
+    </div>
+
+    <div class="spinning-text-container">
+        <div class="spinning-text" id="spinningText">
+            <span>R</span>
+            <span>O</span>
+            <span>T</span>
+            <span>A</span>
+            <span>T</span>
+            <span>I</span>
+            <span>N</span>
+            <span>G</span>
+            <span> </span>
+            <span>T</span>
+            <span>E</span>
+            <span>X</span>
+            <span>T</span>
+            <span> </span>
+            <span>G</span>
+            <span>O</span>
+            <span>E</span>
+            <span>S</span>
+            <span> </span>
+            <span>H</span>
+            <span>E</span>
+            <span>R</span>
+            <span>E</span>
+            <span>!</span>
+            <span> </span>
+            <span>Y</span>
+            <span>O</span>
+            <span>U</span>
+            <span>R</span>
+            <span> </span>
+        </div>
+        
+        <div class="center-content">
+            LOGO
+        </div>
+    </div>
+
+    <script>
+        let isReversed = false;
+        
+        function changeSpeed(speed) {
+            const spinningText = document.getElementById('spinningText');
+            spinningText.className = `spinning-text speed-${speed}`;
+            if (isReversed) {
+                spinningText.style.animationDirection = 'reverse';
+            }
+        }
+        
+        function toggleDirection() {
+            const spinningText = document.getElementById('spinningText');
+            isReversed = !isReversed;
+            spinningText.style.animationDirection = isReversed ? 'reverse' : 'normal';
+        }
+    </script>
+</body>
+</html>
